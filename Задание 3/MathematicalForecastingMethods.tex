@@ -136,7 +136,7 @@
 
     \textbf{Начальные условия:} $\dot \theta_1(0) = \dot \theta_2(0) = 0$, $\theta_1(0) = 0.1 \text{рад}$, $\theta_2(0) = 0.05 \text{рад}$. 
     
-    \textbf{Параметры:} $g = 9.81 \frac{\text{м}}{\text{с}^2}$, $L = 1 \text{м}$, $m = 1 \text{кг}$, $k = \frac{\text{Н}}{\text{м}}$.
+    \textbf{Параметры:} $g = 9.81 \frac{\text{м}}{\text{с}^2}$, $L = 1 \text{м}$, $m = 1 \text{кг}$, $k = 40 \frac{\text{Н}}{\text{м}}$.
 
     \textbf{Модель:} Линейная + Тангенс + Линейная (как в семинаре).
     
@@ -146,19 +146,56 @@
 
 \begin{frame}{Результат}
 
-  \begin{figure}
-    \centering
-     \includegraphics[width = 1 \textwidth]{images/Graph_sum.png}
-     \caption{$\theta_1 + \theta_2$}
-  \end{figure}
+    \begin{figure}
+        \centering
+        \includegraphics[width = 1 \textwidth]{images/Graph_sum.png}
+        \caption{$\theta_1 + \theta_2$}
+    \end{figure}
+
+\end{frame}
+
+%----------------------------------------------------------------------------------------------------------
+
+\begin{frame}{Результат}
+
+    \begin{figure}
+        \centering
+        \includegraphics[width = 1 \textwidth]{images/Graph_difference.png}
+        \caption{$\theta_1 - \theta_2$}
+    \end{figure}
+  
+\end{frame}
+
+%----------------------------------------------------------------------------------------------------------
+
+\begin{frame}{Результат}
+
+    \begin{figure}
+        \centering
+        \includegraphics[width = 1 \textwidth]{images/Graph_1.png}
+        \caption{$\theta_1$}
+    \end{figure}
+
+\end{frame}
+
+%----------------------------------------------------------------------------------------------------------
+
+\begin{frame}{Результат}
+
+    \begin{figure}
+        \centering
+        \includegraphics[width = 1 \textwidth]{images/Graph_2.png}
+        \caption{$\theta_2$}
+    \end{figure}
+  
 \end{frame}
 
 %----------------------------------------------------------------------------------------------------------
 
 \begin{frame}{Выводы}
     \begin{itemize}
-        \item Модель с хорошей точностью предсказывает фазовую траекторию сопряженного маятника;
-        \item Удалось аппроксимировать ДУ небольшой архитектурой;
+        \item Модель может с хорошей точностью предсказывать только для случаев, когда осцилляции не очень большие и время не очень большое;
+        \item SGD не работает, Adam работает, но очень тяжело подобрать шаг, так как либо модель находится в минимуме, либо вылетает на бесконечность;
         \item Код \url{https://github.com/Dd0-s/Mathematical_forecasting_methods}
     \end{itemize}
 \end{frame}
